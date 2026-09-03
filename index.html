@@ -10,7 +10,7 @@
 
     <meta
       name="description"
-      content="Portfolio of Nyasha Gabriel — Creative Developer, Designer and Builder."
+      content="Portfolio of Nyasha Gabriel — Designer, Creative Developer and Builder."
     />
 
     <title>NYASHA.GABRIEL</title>
@@ -37,6 +37,16 @@
   </head>
 
   <body>
+    <!-- Shared silhouette shape, reused by every family figure below.
+         Simple generic person outline — swap this <symbol> (or override
+         each <use> with a real graphic) once real artwork exists. -->
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <symbol id="silhouette-person" viewBox="0 0 100 220">
+        <circle cx="50" cy="34" r="26" />
+        <path d="M50 62c-28 0-42 20-42 46v76c0 8 6 14 14 14h56c8 0 14-6 14-14v-76c0-26-14-46-42-46z" />
+      </symbol>
+    </svg>
+
     <div
       id="site-loader"
       class="site-loader"
@@ -260,19 +270,99 @@
             <h2>INITIALIZING_PROFILE...</h2>
 
             <p>
-              I build robust, localized software and distinct visual
-              experiences. My focus is on offline-first architecture,
-              practical systems, UI design and solving problems with
-              minimal unnecessary complexity.
+              I'm a designer first — building distinct visual identities
+              and interfaces — backed by enough engineering depth to
+              actually ship what I design: offline-first systems,
+              practical architecture, and software that holds up outside
+              the demo.
             </p>
 
             <ul class="skill-list">
-              <li>Flutter / Dart</li>
-              <li>UI / UX & Product Design</li>
-              <li>Offline-First Systems</li>
-              <li>Supabase & Local Databases</li>
-              <li>Brand Identity</li>
+              <li>
+                <span class="material-symbols-outlined skill-icon" aria-hidden="true">palette</span>
+                UI / UX & Product Design
+              </li>
+              <li>
+                <span class="material-symbols-outlined skill-icon" aria-hidden="true">styler</span>
+                Brand Identity
+              </li>
+              <li>
+                <span class="material-symbols-outlined skill-icon" aria-hidden="true">bolt</span>
+                Adaptive, Fast-Learning Systems Thinking
+              </li>
+              <li>
+                <span class="material-symbols-outlined skill-icon" aria-hidden="true">code</span>
+                Flutter / Dart
+              </li>
+              <li>
+                <span class="material-symbols-outlined skill-icon" aria-hidden="true">wifi_off</span>
+                Offline-First Systems
+              </li>
+              <li>
+                <span class="material-symbols-outlined skill-icon" aria-hidden="true">database</span>
+                Supabase & Local Databases
+              </li>
             </ul>
+          </div>
+        </div>
+
+        <!-- =====================================================
+             ORIGIN — the human part of "about". Where I'm from,
+             who's behind me, and the trait that ties it together.
+             ===================================================== -->
+
+        <div class="origin-block">
+          <div class="origin-text">
+            <span class="section-index">
+              ROOTS
+            </span>
+
+            <h3>WHERE_I_START_FROM</h3>
+
+            <p>
+              Born in Harare, raised in motion — Hurungwe, then Harare,
+              then back again — until I finished my final year of school
+              in the city I now call home. Second of four. Moving that
+              much, that young, teaches you to read a new environment
+              fast and get comfortable being the newest person in the
+              room. That instinct never really left — it's how I still
+              approach a new codebase, a new brand, a new problem.
+            </p>
+
+            <span class="trait-badge">
+              SYSTEM.TRAIT :: ADAPTIVE // QUICK_LEARNER
+            </span>
+          </div>
+
+          <div
+            class="family-silhouettes"
+            role="img"
+            aria-label="Five silhouette figures, representing my mother, my siblings, and me"
+          >
+            <div class="silhouette-figure" data-role="mother" style="--sil-h: 1;">
+              <svg class="silhouette-icon" aria-hidden="true"><use href="#silhouette-person"></use></svg>
+              <span class="silhouette-label">Mother</span>
+            </div>
+
+            <div class="silhouette-figure" data-role="brother" style="--sil-h: 0.9;">
+              <svg class="silhouette-icon" aria-hidden="true"><use href="#silhouette-person"></use></svg>
+              <span class="silhouette-label">Younger Brother</span>
+            </div>
+
+            <div class="silhouette-figure silhouette-figure--self" data-role="self" style="--sil-h: 0.86;">
+              <svg class="silhouette-icon" aria-hidden="true"><use href="#silhouette-person"></use></svg>
+              <span class="silhouette-label">Me</span>
+            </div>
+
+            <div class="silhouette-figure" data-role="brother" style="--sil-h: 0.82;">
+              <svg class="silhouette-icon" aria-hidden="true"><use href="#silhouette-person"></use></svg>
+              <span class="silhouette-label">Younger Brother</span>
+            </div>
+
+            <div class="silhouette-figure" data-role="sister" style="--sil-h: 0.68;">
+              <svg class="silhouette-icon" aria-hidden="true"><use href="#silhouette-person"></use></svg>
+              <span class="silhouette-label">Older Sister</span>
+            </div>
           </div>
         </div>
       </section>

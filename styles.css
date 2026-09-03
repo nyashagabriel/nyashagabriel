@@ -10,9 +10,10 @@
 
   --off-white: #efe9dd;
   --muted-white: #bcb8b0;
+  --sky-blue: #7fa8c9;
 
   --max-width: 1180px;
-  --nav-height: 74px;
+  --nav-height: clamp(64px, 8vw, 88px);
 
   --font-heading: "Poppins", sans-serif;
   --font-pixel: "Pixelify Sans", monospace;
@@ -101,6 +102,8 @@ img {
 
 /* =========================================================
    NAVIGATION
+   (transparent floating header — no solid bar; only the
+   inner .site-nav row is clickable)
    ========================================================= */
 
 .site-header {
@@ -119,12 +122,12 @@ img {
   min-height: var(--nav-height);
 
   margin: 0 auto;
-  padding: 0 1.5rem;
+  padding: 0 clamp(1rem, 3vw, 2rem);
 
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: clamp(0.75rem, 2vw, 1.5rem);
 
   pointer-events: auto;
 }
@@ -133,17 +136,34 @@ img {
   color: var(--off-white);
 
   font-family: var(--font-pixel);
-  font-size: 1.05rem;
+  font-size: clamp(0.85rem, 1.4vw, 1.25rem);
 
   text-decoration: none;
+  white-space: nowrap;
 
   text-shadow: 2px 2px 0 var(--deep-bg);
+}
+
+.nav-desktop {
+  flex: 1;
+  min-width: 0;
+
+  display: flex;
+  justify-content: flex-end;
 }
 
 .desktop-nav-links {
   display: flex;
   align-items: center;
-  gap: 0.3rem;
+  flex-wrap: nowrap;
+  gap: clamp(0.1rem, 0.5vw, 0.3rem);
+
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.desktop-nav-links::-webkit-scrollbar {
+  display: none;
 }
 
 .desktop-nav-link {
@@ -152,7 +172,8 @@ img {
   color: var(--off-white);
 
   font-family: var(--font-pixel);
-  font-size: 0.75rem;
+  font-size: clamp(0.68rem, 0.85vw, 0.85rem);
+  white-space: nowrap;
 
   text-decoration: none;
 
@@ -171,10 +192,11 @@ img {
 
 .menu-toggle,
 .menu-close {
-  width: 46px;
-  height: 46px;
+  width: clamp(40px, 5vw, 46px);
+  height: clamp(40px, 5vw, 46px);
+  flex-shrink: 0;
 
-  display: grid;
+  display: none;
   place-items: center;
 
   border: 2px solid var(--mustard-dark);
@@ -194,6 +216,12 @@ img {
   background: var(--mustard-accent);
   color: var(--deep-bg);
 }
+
+.menu-close {
+  display: grid;
+}
+
+/* Hamburger only appears once the desktop links are hidden — see 900px query below */
 
 /* =========================================================
    DETAILED NAVIGATION
@@ -833,13 +861,130 @@ img {
 }
 
 .skill-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
   padding: 0.8rem 1rem;
 
-  color: var(--sky-blue, #7fa8c9);
+  color: var(--sky-blue);
 
   border-left: 3px solid var(--mustard-accent);
 
   background: rgba(16, 24, 39, 0.65);
+}
+
+.skill-icon {
+  flex-shrink: 0;
+
+  font-size: 1.15rem;
+
+  color: var(--mustard-accent);
+}
+
+/* =========================================================
+   ORIGIN (family / roots block, lives inside the About section)
+   ========================================================= */
+
+.origin-block {
+  width: 100%;
+
+  margin-top: clamp(3rem, 7vw, 5rem);
+  padding-top: clamp(2.5rem, 6vw, 4rem);
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+
+  gap: clamp(2rem, 6vw, 5rem);
+  align-items: center;
+
+  border-top: 1px dashed var(--soft-navy);
+}
+
+.origin-text .section-index {
+  color: var(--mustard-accent);
+}
+
+.origin-text h3 {
+  margin-top: 0.4rem;
+
+  color: var(--mustard-highlight);
+
+  font-family: var(--font-pixel);
+  font-size: clamp(1.4rem, 3.4vw, 2.1rem);
+  line-height: 1.1;
+}
+
+.origin-text p {
+  margin-top: 1.2rem;
+
+  color: var(--muted-white);
+
+  line-height: 1.8;
+}
+
+.trait-badge {
+  display: inline-block;
+
+  margin-top: 1.5rem;
+  padding: 0.6rem 0.9rem;
+
+  color: var(--mustard-highlight);
+
+  font-family: var(--font-pixel);
+  font-size: 0.7rem;
+  letter-spacing: 0.05rem;
+
+  border: 1px solid var(--mustard-dark);
+  background: rgba(16, 24, 39, 0.65);
+}
+
+.family-silhouettes {
+  --sil-max-height: clamp(140px, 20vw, 220px);
+
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  gap: clamp(0.9rem, 2.5vw, 1.8rem);
+
+  padding: 1rem;
+}
+
+.silhouette-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 0.6rem;
+}
+
+.silhouette-icon {
+  width: auto;
+  height: calc(var(--sil-max-height) * var(--sil-h, 1));
+
+  fill: var(--soft-navy);
+
+  transition: fill 220ms ease;
+}
+
+.silhouette-figure--self .silhouette-icon {
+  fill: var(--mustard-highlight);
+}
+
+.silhouette-label {
+  color: var(--muted-white);
+
+  font-family: var(--font-pixel);
+  font-size: 0.62rem;
+  letter-spacing: 0.03rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.silhouette-figure--self .silhouette-label {
+  color: var(--mustard-highlight);
 }
 
 /* =========================================================
@@ -1054,18 +1199,35 @@ img {
    RESPONSIVE
    ========================================================= */
 
+@media (min-width: 901px) {
+  .menu-toggle {
+    display: none !important;
+  }
+}
+
 @media (max-width: 900px) {
-  .desktop-nav-links {
+  .nav-desktop {
     display: none;
   }
 
+  .menu-toggle {
+    display: grid;
+  }
+
   .two-column-layout,
-  .contact-layout {
+  .contact-layout,
+  .origin-block {
     grid-template-columns: 1fr;
   }
 
   .contact-status {
     width: 100%;
+  }
+
+  .family-silhouettes {
+    order: -1;
+
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -1083,10 +1245,6 @@ img {
       calc(var(--nav-height) + 1.5rem)
       1rem
       5.5rem;
-  }
-
-  .hero-background img {
-    object-position: center;
   }
 
   .hero-frame {
@@ -1148,7 +1306,7 @@ img {
 
 @media (max-width: 480px) {
   .nav-brand {
-    font-size: 0.82rem;
+    font-size: 0.78rem;
   }
 
   .menu-toggle {
