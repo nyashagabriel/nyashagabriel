@@ -1,0 +1,167 @@
+{
+  "site": {
+    "name": "NYASHA.GABRIEL",
+    "owner": "Nyasha Gabriel",
+    "title": "Creative Developer, Designer & Builder",
+    "description": "Portfolio of Nyasha Gabriel — a creative developer, designer and builder."
+  },
+
+  "assets": {
+    "hero": {
+      "desktop": {
+        "src": "baseline.png",
+        "alt": "Pixel-art mountain landscape portfolio hero background"
+      },
+      "mobile": {
+        "src": "baseline_mobile.png",
+        "alt": "Pixel-art mountain landscape portfolio mobile hero background"
+      }
+    },
+
+    "profile": {
+      "src": "profile.webp",
+      "alt": "Portrait of Nyasha Gabriel"
+    },
+
+    "socials": [
+      {
+        "id": "linkedin",
+        "name": "LinkedIn",
+        "icon": "socials/in.png",
+        "url": "",
+        "label": "Connect with me on LinkedIn",
+        "enabled": false
+      },
+      {
+        "id": "instagram",
+        "name": "Instagram",
+        "icon": "socials/instagram.png",
+        "url": "",
+        "label": "Follow me on Instagram",
+        "enabled": false
+      },
+      {
+        "id": "tiktok",
+        "name": "TikTok",
+        "icon": "socials/tiktok.png",
+        "url": "",
+        "label": "Watch my content on TikTok",
+        "enabled": false
+      },
+      {
+        "id": "youtube",
+        "name": "YouTube",
+        "icon": "socials/you.png",
+        "url": "",
+        "label": "Watch my content on YouTube",
+        "enabled": false
+      }
+    ]
+  },
+
+  "navigation": {
+    "brand": {
+      "label": "NYASHA.GABRIEL",
+      "target": "#hero"
+    },
+
+    "items": [
+      {
+        "id": "home",
+        "label": "HOME",
+        "target": "#hero",
+        "icon": "home",
+        "description": "Return to the beginning"
+      },
+      {
+        "id": "about",
+        "label": "ABOUT",
+        "target": "#about",
+        "icon": "person",
+        "description": "Who I am and what I do"
+      },
+      {
+        "id": "creative-work",
+        "label": "CREATIVE WORK",
+        "target": "#creative-work",
+        "icon": "palette",
+        "description": "Branding, design and creative projects"
+      },
+      {
+        "id": "print-design",
+        "label": "PRINT & DESIGN",
+        "target": "#print-design",
+        "icon": "print",
+        "description": "Commercial print and production work"
+      },
+      {
+        "id": "dev-projects",
+        "label": "SYSTEMS",
+        "target": "#dev-projects",
+        "icon": "code",
+        "description": "Software and development projects"
+      },
+      {
+        "id": "currently-building",
+        "label": "NOW BUILDING",
+        "target": "#currently-building",
+        "icon": "terminal",
+        "description": "Projects currently in development"
+      },
+      {
+        "id": "contact",
+        "label": "CONTACT",
+        "target": "#contact",
+        "icon": "mail",
+        "description": "Establish a connection"
+      }
+    ]
+  },
+
+  "hero": {
+    "name": {
+      "first": "NYASHA",
+      "last": "GABRIEL"
+    },
+
+    "roles": [
+      "CREATIVE DEVELOPER",
+      "DESIGNER",
+      "BUILDER"
+    ],
+
+    "quote": "I NEITHER KNOW NOR DO I THINK I KNOW",
+
+    "scroll": {
+      "label": "SCROLL",
+      "target": "#about"
+    },
+
+    "controls": [
+      {
+        "id": "settings",
+        "position": "top-left",
+        "icon": "settings",
+        "label": "Portfolio settings",
+        "action": "settings"
+      },
+      {
+        "id": "tools",
+        "position": "top-right",
+        "icon": "build",
+        "label": "Developer tools",
+        "action": "tools"
+      }
+    ]
+  },
+
+  "projects": {
+    "placeholder": {
+      "src": "",
+      "alt": "Project preview unavailable",
+      "label": "PROJECT PREVIEW"
+    },
+
+    "items": []
+  }
+}
