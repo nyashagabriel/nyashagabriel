@@ -2,575 +2,276 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
-
-    <meta
-      name="description"
-      content="Portfolio of Nyasha Gabriel — Designer, Creative Developer and Builder."
-    />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Portfolio of Nyasha Gabriel — Designer, Creative Developer and Builder." />
     <title>NYASHA.GABRIEL</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
-
-    <link
-      rel="preconnect"
-      href="https://fonts.gstatic.com"
-      crossorigin
-    />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0"
-      rel="stylesheet"
-    />
-
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
   </head>
 
   <body>
-    <!-- Shared silhouette shape, reused by every family figure below.
-         Simple generic person outline — swap this <symbol> (or override
-         each <use> with a real graphic) once real artwork exists. -->
-    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
-      <symbol id="silhouette-person" viewBox="0 0 100 220">
-        <circle cx="50" cy="34" r="26" />
-        <path d="M50 62c-28 0-42 20-42 46v76c0 8 6 14 14 14h56c8 0 14-6 14-14v-76c0-26-14-46-42-46z" />
-      </symbol>
-    </svg>
-
-    <div
-      id="site-loader"
-      class="site-loader"
-      aria-hidden="true"
-    >
+    <!-- ============================================================ -->
+    <!-- LOADER — shown until assets.json fetches, hidden by main.js  -->
+    <!-- ============================================================ -->
+    <div id="site-loader" class="site-loader" aria-hidden="true">
       <div class="loader-content">
-        <span class="loader-text">
-          INITIALIZING_PORTFOLIO...
-        </span>
+        <span id="loader-text" class="loader-text"></span>
       </div>
     </div>
 
-    <!-- Navigation -->
+    <!-- ============================================================ -->
+    <!-- NAVIGATION (top bar)                                         -->
+    <!-- ============================================================ -->
     <header class="site-header">
-      <nav
-        class="site-nav"
-        aria-label="Main navigation"
-      >
-        <a
-          id="nav-brand"
-          class="nav-brand"
-          href="#hero"
-          aria-label="Return home"
-        >
-          NYASHA.GABRIEL
-        </a>
-
+      <nav class="site-nav" aria-label="Main navigation">
+        <a id="nav-brand" class="nav-brand" href="#hero" aria-label="Return home"></a>
         <div class="nav-desktop">
-          <div
-            id="desktop-nav-links"
-            class="desktop-nav-links"
-          ></div>
+          <div id="desktop-nav-links" class="desktop-nav-links"></div>
         </div>
-
-        <button
-          id="menu-toggle"
-          class="menu-toggle"
-          type="button"
-          aria-label="Open navigation menu"
-          aria-expanded="false"
-          aria-controls="navigation-panel"
-        >
-          <span class="material-symbols-outlined">
-            menu
-          </span>
+        <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="navigation-panel">
+          <span class="material-symbols-outlined">menu</span>
         </button>
       </nav>
     </header>
 
-    <!-- Detailed navigation -->
-    <aside
-      id="navigation-panel"
-      class="navigation-panel"
-      aria-hidden="true"
-    >
+    <!-- ============================================================ -->
+    <!-- NAVIGATION (slide-out panel, mobile + desktop "explore" menu) -->
+    <!-- ============================================================ -->
+    <aside id="navigation-panel" class="navigation-panel" aria-hidden="true">
       <div class="navigation-panel-header">
         <div>
-          <span class="panel-eyebrow">
-            PORTFOLIO.NAV
-          </span>
-
-          <h2>EXPLORE</h2>
+          <span id="nav-eyebrow" class="panel-eyebrow"></span>
+          <h2 id="nav-title"></h2>
         </div>
-
-        <button
-          id="menu-close"
-          class="menu-close"
-          type="button"
-          aria-label="Close navigation menu"
-        >
-          <span class="material-symbols-outlined">
-            close
-          </span>
+        <button id="menu-close" class="menu-close" type="button" aria-label="Close navigation menu">
+          <span class="material-symbols-outlined">close</span>
         </button>
       </div>
-
-      <div
-        id="detailed-navigation"
-        class="detailed-navigation"
-      ></div>
-
+      <div id="detailed-navigation" class="detailed-navigation"></div>
       <div class="navigation-panel-footer">
-        <span>SYSTEM STATUS</span>
-        <strong>ONLINE</strong>
+        <span id="nav-status-label"></span>
+        <strong id="nav-status-value"></strong>
       </div>
     </aside>
 
-    <div
-      id="navigation-backdrop"
-      class="navigation-backdrop"
-    ></div>
+    <div id="navigation-backdrop" class="navigation-backdrop"></div>
 
     <main>
-      <!-- =====================================================
-           HERO
-           ===================================================== -->
-
-      <section
-        id="hero"
-        class="hero-scene"
-      >
+      <!-- ============================================================ -->
+      <!-- 00 · HERO                                                     -->
+      <!-- ============================================================ -->
+      <section id="hero" class="hero-scene">
         <picture class="hero-background">
-          <source
-            media="(max-width: 768px)"
-            srcset="baseline_mobile.png"
-          />
-
-          <img
-            src="baseline.png"
-            alt=""
-            aria-hidden="true"
-          />
+          <source media="(max-width: 768px)" srcset="baseline_mobile.png" />
+          <img src="baseline.png" alt="" aria-hidden="true" />
         </picture>
-
-        <div
-          class="hero-overlay"
-          aria-hidden="true"
-        ></div>
-
-        <!-- Pixel frame only. No corner controls. -->
-        <div
-          class="hero-frame"
-          aria-hidden="true"
-        >
-          <div
-            class="frame-corner frame-corner-top-left"
-          ></div>
-
-          <div
-            class="frame-corner frame-corner-top-right"
-          ></div>
-
-          <div
-            class="frame-corner frame-corner-bottom-left"
-          ></div>
-
-          <div
-            class="frame-corner frame-corner-bottom-right"
-          ></div>
+        <div class="hero-overlay" aria-hidden="true"></div>
+        <div class="hero-frame" aria-hidden="true">
+          <div class="frame-corner frame-corner-top-left"></div>
+          <div class="frame-corner frame-corner-top-right"></div>
+          <div class="frame-corner frame-corner-bottom-left"></div>
+          <div class="frame-corner frame-corner-bottom-right"></div>
         </div>
-
         <div class="hero-content">
-          <div
-            class="hero-name"
-            aria-label="Nyasha Gabriel"
-          >
-            <span
-              id="hero-first-name"
-              class="hero-name-line"
-            >
-              NYASHA
-            </span>
-
-            <span
-              id="hero-last-name"
-              class="hero-name-line hero-name-accent"
-            >
-              GABRIEL
-            </span>
+          <div class="hero-name" aria-label="Nyasha Gabriel">
+            <span id="hero-first-name" class="hero-name-line"></span>
+            <span id="hero-last-name" class="hero-name-line hero-name-accent"></span>
           </div>
-
-          <div
-            id="hero-roles"
-            class="hero-roles"
-          ></div>
-
-          <div
-            id="hero-socials"
-            class="hero-socials"
-            aria-label="Social media links"
-          ></div>
-
-          <p
-            id="hero-quote"
-            class="hero-quote"
-          ></p>
+          <div id="hero-roles" class="hero-roles"></div>
+          <div id="hero-socials" class="hero-socials" aria-label="Social media links"></div>
+          <p id="hero-quote" class="hero-quote"></p>
         </div>
-
-        <a
-          id="hero-scroll"
-          class="hero-scroll"
-          href="#about"
-          aria-label="Scroll to about section"
-        >
-          <span class="hero-scroll-label">
-            SCROLL
-          </span>
-
-          <span
-            class="material-symbols-outlined hero-scroll-icon"
-          >
-            keyboard_arrow_down
-          </span>
+        <a id="hero-scroll" class="hero-scroll" href="#about" aria-label="Scroll to about section">
+          <span id="scroll-label" class="hero-scroll-label"></span>
+          <span class="material-symbols-outlined hero-scroll-icon">keyboard_arrow_down</span>
         </a>
       </section>
 
-      <!-- =====================================================
-           ABOUT
-           ===================================================== -->
-
-      <section
-        id="about"
-        class="scene about-scene"
-      >
-        <div class="content-container two-column-layout">
-          <div class="profile-column">
-            <div class="profile-frame">
-              <img
-                id="profile-image"
-                src="profile.webp"
-                alt="Portrait of Nyasha Gabriel"
-              />
-            </div>
-          </div>
-
-          <div class="about-column">
-            <span class="section-index">
-              01
-            </span>
-
-            <h2>INITIALIZING_PROFILE...</h2>
-
-            <p>
-              I'm a designer first — building distinct visual identities
-              and interfaces — backed by enough engineering depth to
-              actually ship what I design: offline-first systems,
-              practical architecture, and software that holds up outside
-              the demo.
-            </p>
-
-            <ul class="skill-list">
-              <li>
-                <span class="material-symbols-outlined skill-icon" aria-hidden="true">palette</span>
-                UI / UX & Product Design
-              </li>
-              <li>
-                <span class="material-symbols-outlined skill-icon" aria-hidden="true">styler</span>
-                Brand Identity
-              </li>
-              <li>
-                <span class="material-symbols-outlined skill-icon" aria-hidden="true">bolt</span>
-                Adaptive, Fast-Learning Systems Thinking
-              </li>
-              <li>
-                <span class="material-symbols-outlined skill-icon" aria-hidden="true">code</span>
-                Flutter / Dart
-              </li>
-              <li>
-                <span class="material-symbols-outlined skill-icon" aria-hidden="true">wifi_off</span>
-                Offline-First Systems
-              </li>
-              <li>
-                <span class="material-symbols-outlined skill-icon" aria-hidden="true">database</span>
-                Supabase & Local Databases
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- =====================================================
-             ORIGIN — the human part of "about". Where I'm from,
-             who's behind me, and the trait that ties it together.
-             ===================================================== -->
-
-        <div class="origin-block">
-          <div class="origin-text">
-            <span class="section-index">
-              ROOTS
-            </span>
-
-            <h3>WHERE_I_START_FROM</h3>
-
-            <p>
-              Born in Harare, raised in motion — Hurungwe, then Harare,
-              then back again — until I finished my final year of school
-              in the city I now call home. Second of four. Moving that
-              much, that young, teaches you to read a new environment
-              fast and get comfortable being the newest person in the
-              room. That instinct never really left — it's how I still
-              approach a new codebase, a new brand, a new problem.
-            </p>
-
-            <span class="trait-badge">
-              SYSTEM.TRAIT :: ADAPTIVE // QUICK_LEARNER
-            </span>
-          </div>
-
-          <div
-            class="family-silhouettes"
-            role="img"
-            aria-label="Five silhouette figures, representing my mother, my siblings, and me"
-          >
-            <div class="silhouette-figure" data-role="mother" style="--sil-h: 1;">
-              <svg class="silhouette-icon" aria-hidden="true"><use href="#silhouette-person"></use></svg>
-              <span class="silhouette-label">Mother</span>
-            </div>
-
-            <div class="silhouette-figure" data-role="brother" style="--sil-h: 0.9;">
-              <svg class="silhouette-icon" aria-hidden="true"><use href="#silhouette-person"></use></svg>
-              <span class="silhouette-label">Younger Brother</span>
-            </div>
-
-            <div class="silhouette-figure silhouette-figure--self" data-role="self" style="--sil-h: 0.86;">
-              <svg class="silhouette-icon" aria-hidden="true"><use href="#silhouette-person"></use></svg>
-              <span class="silhouette-label">Me</span>
-            </div>
-
-            <div class="silhouette-figure" data-role="brother" style="--sil-h: 0.82;">
-              <svg class="silhouette-icon" aria-hidden="true"><use href="#silhouette-person"></use></svg>
-              <span class="silhouette-label">Younger Brother</span>
-            </div>
-
-            <div class="silhouette-figure" data-role="sister" style="--sil-h: 0.68;">
-              <svg class="silhouette-icon" aria-hidden="true"><use href="#silhouette-person"></use></svg>
-              <span class="silhouette-label">Older Sister</span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- =====================================================
-           CREATIVE WORK
-           ===================================================== -->
-
-      <section
-        id="creative-work"
-        class="scene"
-      >
+      <!-- ============================================================ -->
+      <!-- 01 · ABOUT + ROOTS (bio, skills, origin story, family)        -->
+      <!-- ============================================================ -->
+      <section id="about" class="scene about-scene">
         <div class="content-container">
-          <div class="section-heading">
-            <span class="section-index">
-              02
-            </span>
 
-            <h2>CREATIVE_WORK</h2>
-          </div>
-
-          <div
-            id="creative-projects"
-            class="project-grid"
-          >
-            <div class="empty-data-card">
-              <span class="material-symbols-outlined">
-                palette
-              </span>
-
-              <p>CREATIVE PROJECT DATA READY</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- =====================================================
-           PRINT & DESIGN
-           ===================================================== -->
-
-      <section
-        id="print-design"
-        class="scene"
-      >
-        <div class="content-container">
-          <div class="section-heading">
-            <span class="section-index">
-              03
-            </span>
-
-            <h2>PRINT_AND_PRODUCTION</h2>
-          </div>
-
-          <div class="experience-list">
-            <article class="experience-item">
-              <span class="experience-marker"></span>
-
-              <div>
-                <h3>Golden Hive Prints</h3>
-
-                <p class="experience-role">
-                  Commercial Printing & Design Workflow
-                </p>
-
-                <p>
-                  Large-format print production, commercial layouts
-                  and operational data systems.
-                </p>
+          <div class="about-top-grid">
+            <!-- Portrait + skill list -->
+            <div class="about-visuals">
+              <div class="profile-frame">
+                <img id="profile-image" src="profile.webp" alt="Portrait" />
               </div>
-            </article>
+              <ul id="skill-list" class="skill-list"></ul>
+            </div>
 
-            <article class="experience-item">
-              <span class="experience-marker"></span>
-
-              <div>
-                <h3>McLuke Print Shop</h3>
-
-                <p class="experience-role">
-                  Design & Production
-                </p>
-
-                <p>
-                  Commercial layouts, production coordination and
-                  vector asset development.
-                </p>
+            <!-- Bio + Roots story -->
+            <div class="about-text">
+              <div class="bio-block">
+                <span id="about-index" class="section-index"></span>
+                <h2 id="about-heading"></h2>
+                <div id="about-bio" class="about-bio-content"></div>
               </div>
-            </article>
-          </div>
-        </div>
-      </section>
 
-      <!-- =====================================================
-           DEVELOPMENT
-           ===================================================== -->
-
-      <section
-        id="dev-projects"
-        class="scene"
-      >
-        <div class="content-container">
-          <div class="section-heading">
-            <span class="section-index">
-              04
-            </span>
-
-            <h2>SYSTEMS.EXE</h2>
-          </div>
-
-          <div
-            id="development-projects"
-            class="project-grid"
-          >
-            <div class="empty-data-card">
-              <span class="material-symbols-outlined">
-                code
-              </span>
-
-              <p>DEVELOPMENT PROJECT DATA READY</p>
+              <div class="origin-block">
+                <span id="origin-index" class="section-index"></span>
+                <h3 id="origin-heading"></h3>
+                <div id="origin-story"></div>
+                <span id="trait-badge" class="trait-badge"></span>
+              </div>
             </div>
           </div>
+
+          <!-- Family showcase: silhouettes + click/hover-to-reveal influence quote -->
+          <div class="family-showcase-wrapper">
+            <div id="family-silhouettes" class="family-showcase" role="img" aria-label="Family Figures">
+              <div class="silhouette-figure" data-role="mother" style="--sil-h: 1;">
+                <img class="silhouette-icon" src="family/mother.png" alt="Mother" />
+                <span id="label-mother" class="silhouette-label"></span>
+              </div>
+              <div class="silhouette-figure" data-role="brother1" style="--sil-h: 0.9;">
+                <img class="silhouette-icon" src="family/lil_bro1.png" alt="Younger Brother" />
+                <span id="label-brother1" class="silhouette-label"></span>
+              </div>
+              <div class="silhouette-figure silhouette-figure--self" data-role="self" style="--sil-h: 0.86;">
+                <img class="silhouette-icon" src="family/nyashagabriel.png" alt="Me" />
+                <span id="label-self" class="silhouette-label"></span>
+              </div>
+              <div class="silhouette-figure" data-role="brother2" style="--sil-h: 0.82;">
+                <img class="silhouette-icon" src="family/lil_bro2.png" alt="Younger Brother" />
+                <span id="label-brother2" class="silhouette-label"></span>
+              </div>
+              <div class="silhouette-figure" data-role="sister" style="--sil-h: 0.68;">
+                <img class="silhouette-icon" src="family/sister.png" alt="Older Sister" />
+                <span id="label-sister" class="silhouette-label"></span>
+              </div>
+            </div>
+            <!-- Filled + shown by main.js when a silhouette is clicked/focused -->
+            <div id="family-quote-box" class="family-quote-box" aria-live="polite"></div>
+          </div>
+
         </div>
       </section>
 
-      <!-- =====================================================
-           CURRENTLY BUILDING
-           ===================================================== -->
-
-      <section
-        id="currently-building"
-        class="scene"
-      >
+      <!-- ============================================================ -->
+      <!-- 02 · TIMELINE (how I got here)                                -->
+      <!-- ============================================================ -->
+      <section id="timeline" class="scene">
         <div class="content-container">
           <div class="section-heading">
-            <span class="section-index">
-              05
-            </span>
-
-            <h2>CURRENTLY_BUILDING</h2>
+            <span id="timeline-index" class="section-index"></span>
+            <h2 id="timeline-heading"></h2>
           </div>
+          <ol id="timeline-list" class="timeline-list"></ol>
+        </div>
+      </section>
 
+      <!-- ============================================================ -->
+      <!-- 03 · CREATIVE WORK (client branding / digital design)         -->
+      <!-- ============================================================ -->
+      <section id="creative-work" class="scene">
+        <div class="content-container">
+          <div class="section-heading">
+            <span id="creative-index" class="section-index"></span>
+            <h2 id="creative-heading"></h2>
+          </div>
+          <div id="creative-projects" class="project-grid"></div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- 04 · PRINT & DESIGN (print production, client + employer)     -->
+      <!-- ============================================================ -->
+      <section id="print-design" class="scene">
+        <div class="content-container">
+          <div class="section-heading">
+            <span id="print-index" class="section-index"></span>
+            <h2 id="print-heading"></h2>
+          </div>
+          <div id="experience-list" class="experience-list"></div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- 05 · SYSTEMS / DEV PROJECTS                                   -->
+      <!-- ============================================================ -->
+      <section id="dev-projects" class="scene">
+        <div class="content-container">
+          <div class="section-heading">
+            <span id="dev-index" class="section-index"></span>
+            <h2 id="dev-heading"></h2>
+          </div>
+          <div id="development-projects" class="project-grid"></div>
+        </div>
+      </section>
+
+      <!-- ============================================================ -->
+      <!-- 06 · CURRENTLY BUILDING (terminal widget)                     -->
+      <!-- ============================================================ -->
+      <section id="currently-building" class="scene">
+        <div class="content-container">
+          <div class="section-heading">
+            <span id="building-index" class="section-index"></span>
+            <h2 id="building-heading"></h2>
+          </div>
           <div class="terminal-container">
             <div class="terminal-header">
-              <span>NYASHA@PORTFOLIO:~$</span>
+              <span id="terminal-title"></span>
             </div>
-
-            <div class="terminal-body">
-              <p>
-                <span class="terminal-prompt">></span>
-                Waiting for live project data...
-              </p>
-
-              <p>
-                <span class="terminal-prompt">></span>
-                Portfolio data system initialized.
-              </p>
-
-              <p>
-                <span class="terminal-prompt">></span>
-                Ready for project deployment.
-              </p>
-
+            <div id="terminal-body" class="terminal-body">
               <span class="terminal-cursor">_</span>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- =====================================================
-           CONTACT
-           ===================================================== -->
-
-      <section
-        id="contact"
-        class="scene contact-scene"
-      >
+      <!-- ============================================================ -->
+      <!-- 07 · CONTACT                                                  -->
+      <!-- ============================================================ -->
+      <section id="contact" class="scene contact-scene">
         <div class="content-container">
           <div class="section-heading">
-            <span class="section-index">
-              06
-            </span>
-
-            <h2>ESTABLISH_CONNECTION</h2>
+            <span id="contact-index" class="section-index"></span>
+            <h2 id="contact-heading"></h2>
           </div>
-
           <div class="contact-layout">
             <div>
-              <p class="contact-intro">
-                Interested in building something useful, strange or
-                technically difficult?
-              </p>
-
-              <div
-                id="contact-socials"
-                class="contact-socials"
-              ></div>
+              <div id="contact-intro" class="contact-intro"></div>
+              <div id="contact-socials" class="contact-socials">
+                <a id="social-in" href="#" class="social-link"><img src="socials/in.png" alt="LinkedIn"></a>
+                <a id="social-ig" href="#" class="social-link"><img src="socials/instagram.png" alt="Instagram"></a>
+                <a id="social-tt" href="#" class="social-link"><img src="socials/tiktok.png" alt="TikTok"></a>
+                <a id="social-yt" href="#" class="social-link"><img src="socials/you.png" alt="YouTube"></a>
+              </div>
             </div>
-
             <div class="contact-status">
-              <span class="status-label">
-                CONNECTION STATUS
-              </span>
-
-              <strong>READY_FOR_INPUT</strong>
+              <span id="contact-status-label" class="status-label"></span>
+              <strong id="contact-status-value"></strong>
             </div>
           </div>
         </div>
       </section>
     </main>
+
+    <!-- ============================================================ -->
+    <!-- FOOTER                                                        -->
+    <!-- ============================================================ -->
+    <footer id="site-footer" class="site-footer">
+      <div class="footer-background" aria-hidden="true">
+        <img id="footer-bg-img" src="" alt="" />
+        <div class="footer-overlay"></div>
+      </div>
+
+      <div class="content-container footer-content-wrapper">
+        <div id="footer-columns" class="footer-columns"></div>
+
+        <div class="footer-bottom">
+          <span id="footer-copyright" class="footer-copyright"></span>
+          <div id="footer-links" class="footer-links"></div>
+        </div>
+      </div>
+    </footer>
 
     <script src="main.js"></script>
   </body>

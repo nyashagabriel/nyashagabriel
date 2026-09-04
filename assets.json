@@ -1,167 +1,134 @@
 {
   "site": {
     "name": "NYASHA.GABRIEL",
-    "owner": "Nyasha Gabriel",
+    "owner": "Gabriel Tawananyasha Kuudzadombo",
     "title": "Creative Developer, Designer & Builder",
-    "description": "Portfolio of Nyasha Gabriel — a creative developer, designer and builder."
+    "description": "Portfolio of Gabriel Tawananyasha Kuudzadombo — a creative developer, designer and builder."
   },
-
   "assets": {
     "hero": {
-      "desktop": {
-        "src": "baseline.png",
-        "alt": "Pixel-art mountain landscape portfolio hero background"
-      },
-      "mobile": {
-        "src": "baseline_mobile.png",
-        "alt": "Pixel-art mountain landscape portfolio mobile hero background"
-      }
+      "desktop": { "src": "baseline.png", "alt": "Pixel-art mountain landscape portfolio hero background" },
+      "mobile": { "src": "baseline_mobile.png", "alt": "Pixel-art mountain landscape portfolio mobile hero background" }
     },
-
     "profile": {
       "src": "profile.webp",
-      "alt": "Portrait of Nyasha Gabriel"
+      "alt": "Portrait of Gabriel"
     },
-
     "socials": [
-      {
-        "id": "linkedin",
-        "name": "LinkedIn",
-        "icon": "socials/in.png",
-        "url": "",
-        "label": "Connect with me on LinkedIn",
-        "enabled": false
-      },
-      {
-        "id": "instagram",
-        "name": "Instagram",
-        "icon": "socials/instagram.png",
-        "url": "",
-        "label": "Follow me on Instagram",
-        "enabled": false
-      },
-      {
-        "id": "tiktok",
-        "name": "TikTok",
-        "icon": "socials/tiktok.png",
-        "url": "",
-        "label": "Watch my content on TikTok",
-        "enabled": false
-      },
-      {
-        "id": "youtube",
-        "name": "YouTube",
-        "icon": "socials/you.png",
-        "url": "",
-        "label": "Watch my content on YouTube",
-        "enabled": false
-      }
+      { "id": "linkedin", "name": "LinkedIn", "icon": "socials/in.png", "url": "linkedin.com/in/nyashagabriel", "label": "Connect with me on LinkedIn", "enabled": true },
+      { "id": "instagram", "name": "Instagram", "icon": "socials/instagram.png", "url": "#", "label": "Follow me on Instagram", "enabled": true },
+      { "id": "tiktok", "name": "TikTok", "icon": "socials/tiktok.png", "url": "#", "label": "Watch my content on TikTok", "enabled": true },
+      { "id": "youtube", "name": "YouTube", "icon": "socials/you.png", "url": "#", "label": "Watch my content on YouTube", "enabled": true }
     ]
   },
-
   "navigation": {
-    "brand": {
-      "label": "NYASHA.GABRIEL",
-      "target": "#hero"
-    },
-
+    "brand": { "label": "NYASHA.GABRIEL", "target": "#hero" },
     "items": [
-      {
-        "id": "home",
-        "label": "HOME",
-        "target": "#hero",
-        "icon": "home",
-        "description": "Return to the beginning"
-      },
-      {
-        "id": "about",
-        "label": "ABOUT",
-        "target": "#about",
-        "icon": "person",
-        "description": "Who I am and what I do"
-      },
-      {
-        "id": "creative-work",
-        "label": "CREATIVE WORK",
-        "target": "#creative-work",
-        "icon": "palette",
-        "description": "Branding, design and creative projects"
-      },
-      {
-        "id": "print-design",
-        "label": "PRINT & DESIGN",
-        "target": "#print-design",
-        "icon": "print",
-        "description": "Commercial print and production work"
-      },
-      {
-        "id": "dev-projects",
-        "label": "SYSTEMS",
-        "target": "#dev-projects",
-        "icon": "code",
-        "description": "Software and development projects"
-      },
-      {
-        "id": "currently-building",
-        "label": "NOW BUILDING",
-        "target": "#currently-building",
-        "icon": "terminal",
-        "description": "Projects currently in development"
-      },
-      {
-        "id": "contact",
-        "label": "CONTACT",
-        "target": "#contact",
-        "icon": "mail",
-        "description": "Establish a connection"
-      }
+      { "id": "home", "label": "HOME", "target": "#hero", "icon": "home", "description": "Return to the beginning" },
+      { "id": "about", "label": "ABOUT", "target": "#about", "icon": "person", "description": "Who I am and what I do" },
+      { "id": "timeline", "label": "TIMELINE", "target": "#timeline", "icon": "history", "description": "How I got here" },
+      { "id": "creative-work", "label": "CREATIVE WORK", "target": "#creative-work", "icon": "palette", "description": "Branding, design and creative projects" },
+      { "id": "print-design", "label": "PRINT & DESIGN", "target": "#print-design", "icon": "print", "description": "Commercial print and production work" },
+      { "id": "dev-projects", "label": "SYSTEMS", "target": "#dev-projects", "icon": "code", "description": "Software and development projects" },
+      { "id": "currently-building", "label": "NOW BUILDING", "target": "#currently-building", "icon": "terminal", "description": "Projects currently in development" },
+      { "id": "contact", "label": "CONTACT", "target": "#contact", "icon": "mail", "description": "Establish a connection" }
     ]
   },
-
   "hero": {
-    "name": {
-      "first": "NYASHA",
-      "last": "GABRIEL"
-    },
-
-    "roles": [
-      "CREATIVE DEVELOPER",
-      "DESIGNER",
-      "BUILDER"
-    ],
-
+    "name": { "first": "GABRIEL", "last": "KUUDZADOMBO" },
+    "roles": [ "GRAPHICS DESIGNER", "DEVELOPER", "BUILDER" ],
     "quote": "I NEITHER KNOW NOR DO I THINK I KNOW",
-
-    "scroll": {
-      "label": "SCROLL",
-      "target": "#about"
-    },
-
+    "scroll": { "label": "SCROLL", "target": "#about" },
     "controls": [
-      {
-        "id": "settings",
-        "position": "top-left",
-        "icon": "settings",
-        "label": "Portfolio settings",
-        "action": "settings"
-      },
-      {
-        "id": "tools",
-        "position": "top-right",
-        "icon": "build",
-        "label": "Developer tools",
-        "action": "tools"
-      }
+      { "id": "settings", "position": "top-left", "icon": "settings", "label": "Portfolio settings", "action": "settings" },
+      { "id": "tools", "position": "top-right", "icon": "build", "label": "Developer tools", "action": "tools" }
     ]
   },
-
-  "projects": {
-    "placeholder": {
-      "src": "",
-      "alt": "Project preview unavailable",
-      "label": "PROJECT PREVIEW"
-    },
-
-    "items": []
+  "about": {
+    "index": "01",
+    "heading": "INITIALIZING_PROFILE...",
+    "bio": "I move fast in new environments and I don't wait for permission to start — years of picking things up on the fly turned into a habit of teaching myself whatever a project needs, from Sketchware and HTML back in secondary school to Android Studio and design tools since. I design in Figma, Inkscape, Adobe XD, Photoshop, and CorelDraw, and I build what I design rather than hand it off and hope. Right now that shows up at McLuke — designing ads, running large-format and DTF printing, and handling the machines that make it real. I'm still finishing things up on paper too (graduating Uncommon this December, working through BYU Pathway's PC103 before picking a degree), but most of what I know came from doing, not sitting in a classroom.",
+    "skills": [
+      { "icon": "design_services", "label": "Figma, Inkscape, Adobe XD" },
+      { "icon": "brush", "label": "Photoshop, CorelDRAW" },
+      { "icon": "code", "label": "Self-taught Development — Sketchware, HTML, Android Studio" },
+      { "icon": "print", "label": "Large-Format & DTF Print Production" }
+    ]
+  },
+  "origin": {
+    "index": "ROOTS",
+    "heading": "WHERE_I_START_FROM",
+    "story": "Born in Harare, raised in motion — Hurungwe, then Harare, then back again — until I finished my final year of school in the city I now call home. Second of four. Part of that time I spent at my grandmother's, where being the one who got disciplined most taught me manners early. My father was around until 2014; what I took from that came later, mostly lessons in what not to be. Moving that much teaches you to read a new environment fast and get comfortable being the newest person in the room. That instinct never really left — it's how I approach a new codebase, brand, or problem.",
+    "trait": "SYSTEM.TRAIT :: ADAPTIVE // QUICK_LEARNER",
+    "family": [
+      { "role": "mother", "src": "family/mother.png", "label": "Mother", "quote": "A natural hustler who never plays with her money — taught me that figuring out how to make things easier for the people you love is worth the work." },
+      { "role": "brother1", "src": "family/lil_bro1.png", "label": "Younger Brother", "quote": "A footballer who doesn't let outside noise change his game — taught me to brush off criticism that isn't actually trying to help." },
+      { "role": "self", "src": "family/nyashagabriel.png", "label": "Me", "quote": "All of it — the good and the bad — is what makes Nyasha Gabriel." },
+      { "role": "brother2", "src": "family/lil_bro2.png", "label": "Younger Brother", "quote": "Still figuring out his own path, but stands his ground the same way — you don't let non-constructive critics write your identity for you." },
+      { "role": "sister", "src": "family/sister.png", "label": "Older Sister", "quote": "More of a junior parent than a sibling — most of my manners, I picked up from her." }
+    ]
+  },
+  "timeline": {
+    "index": "TIMELINE",
+    "heading": "HOW_I_GOT_HERE",
+    "milestones": [
+      { "label": "Discovered app-building", "date": "2020", "description": "In secondary school (Form 1), stumbled onto app-making on Android and started self-teaching Sketchware and HTML." },
+      { "label": "Went deeper into development", "date": "2024", "description": "Continued self-teaching through Android Studio, building on the early Sketchware and HTML foundation." },
+      { "label": "Studied accounting", "date": "2024", "description": "Enrolled in ACCA accounting at Claremont Business School; stepped away due to funding." },
+      { "label": "Worked with Golden Hive's CEO", "date": "2025", "description": "Worked directly with the CEO of Golden Hive Prints, who offered a path to stake in the company." },
+      { "label": "Got first PC", "date": "2024", "description": "Got a personal computer and used it to go further into Android Studio and design tools." },
+      { "label": "Joined Golden Hive & Greyway.Co", "date": "2024", "description": "Took on Operations Support at Golden Hive Prints and Software Developer and Designer at Greyway.Co, my personal brand." },
+      { "label": "Started Uncommon & BYU Pathway", "date": "Jan 2026 / Mar 2025", "description": "Started Uncommon in January 2026 and began BYU Pathway's PC103 in March 2025." },
+      { "label": "Landed McLuke internship", "date": "14 May 2026", "description": "Started an internship at McLuke Print Shop, learning the full rhythm of design, production, and running the shop's machines." },
+      { "label": "Hired as designer", "date": "14 May 2026", "description": "Moved into the designer role at McLuke, working across large-format and DTF printing, ad design, and production." },
+      { "label": "Now", "date": "Full-time at McLuke", "description": "The internship ended on 14 August 2026. Now fully employed at McLuke while continuing BYU Pathway, finishing Uncommon coursework, and building this portfolio." }
+    ]
+  },
+  "creative_work": {
+    "index": "02",
+    "heading": "CREATIVE_WORK",
+    "projects": [
+      { "title": "Chrome Paints", "description": "Designed the logo and social branding.", "images": ["chrome_paints/logo_social.webp", "chrome_paints/business_card.webp", "chrome_paints/facebook cover.webp", "chrome_paints/note_book.webp"] },
+      { "title": "Nyamukapa Family", "description": "Designed a memorial social post for the family.", "images": ["singles/nyamukupa family.webp"] }
+    ]
+  },
+  "print_design": {
+    "index": "03",
+    "heading": "PRINT_AND_PRODUCTION",
+    "experience": [
+      { "company": "Chrome Paints", "role": "Packaging Print", "description": "Designed the packaging stickers for their paint buckets.", "images": ["chrome_paints/pavement stickers 3.webp"] },
+      { "company": "Orgfert", "role": "Print Production", "description": "Designed the receipt book for Orgshop and redesigned the banner wall for the 2026 agric show.", "images": ["singles/orgbook.webp", "singles/orgfert wall 2.jpg"] },
+      { "company": "Golden Hive Prints", "role": "Commercial Printing & Design Workflow", "description": "Designed the brand guide and social posts during direct work with the company, alongside large-format print production and commercial layouts." },
+      { "company": "McLuke Print Shop", "role": "Design & Production", "description": "Design across social posts, ads, canvas portraits, banners, receipt books, and company t-shirts, plus running large-format and DTF print production. Currently employed here.", "images": ["mcluke_ad/p1.webp", "mcluke_ad/p2.webp", "mcluke_ad/p3.webp", "mcluke_ad/p4.webp"] }
+    ]
+  },
+  "dev_projects": {
+    "index": "04",
+    "heading": "SYSTEMS.EXE",
+    "placeholder": "In progress — check back soon.",
+    "projects": []
+  },
+  "currently_building": {
+    "index": "05",
+    "heading": "CURRENTLY_BUILDING",
+    "terminal": {
+      "title": "GABRIEL@PORTFOLIO:~$",
+      "lines": [
+        "Nothing queued yet — check back soon."
+      ]
+    }
+  },
+  "contact": {
+    "index": "06",
+    "heading": "ESTABLISH_CONNECTION",
+    "intro": "Open to collabs — if you've got something worth building together, let's talk.",
+    "status": { "label": "CONNECTION STATUS", "value": "READY_FOR_INPUT" }
+  },
+  "footer": {
+    "text": "© 2026 Gabriel Tawananyasha Kuudzadombo.",
+    "links": [
+      { "label": "GREYWAY.CO", "url": "#" },
+      { "label": "BACK TO TOP", "url": "#hero" }
+    ]
   }
 }
